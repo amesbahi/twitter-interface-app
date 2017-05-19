@@ -1,0 +1,24 @@
+{
+  "name": "api-with-node-v1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://amesbahi@github.com/amesbahi/twitter-interface.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amesbahi/twitter-interface/issues"
+  },
+  "homepage": "https://github.com/amesbahi/twitter-interface#readme",
+  "dependencies": {
+    "express": "^4.15.2",
+    "pug": "^2.0.0-beta11",
+    "twit": "^2.2.5"
+  }
+}
