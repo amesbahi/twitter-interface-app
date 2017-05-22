@@ -34,10 +34,11 @@ app.get('/', (req, res) => {
     const promiseArray = [profileRequest, tweetsRequest, friendsRequest, messagesRequest];
 
     Promise.all(promiseArray).then((promisesResolvedArray) => {
-        // console.log(promisesResolvedArray[1]);
+         //console.log(promisesResolvedArray[0]);
         // profileRequest data
         let myScreenName = promisesResolvedArray[0].data.screen_name;
         let myProfileImageUrl = promisesResolvedArray[0].data.profile_image_url_https;
+        let name = promisesResolvedArray[0].data.name;
 
         // tweetsRequest data
         let tweets = promisesResolvedArray[1].data // do a loop here?
@@ -84,7 +85,8 @@ app.get('/', (req, res) => {
             messagesArray.push({
                 text: currentValue.text,
                 dateSent: currentValue.sender.created_at, /* parse? */
-                timeSent: currentValue.sender.created_at /* parse? */
+                timeSent: currentValue.sender.created_at, /* parse? */
+                recipient: currentValue.recipient.name
             });
             //console.log(messagesArray);
         });
@@ -92,7 +94,10 @@ app.get('/', (req, res) => {
         res.render('index', {
             myScreenName: myScreenName,
             myProfileImageUrl: myProfileImageUrl,
-            friendsArray: friendsArray
+            name: name,
+            friendsArray: friendsArray,
+            tweetsArray: tweetsArray,
+            messagesArray: messagesArray
         });
     }).catch((err) => {
         console.log(err);
