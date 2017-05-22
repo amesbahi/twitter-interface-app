@@ -2173,6 +2173,7 @@ body {
   height: 100%;
   border-right: 1px solid #e1e1e1;
   overflow-Y: scroll;
+  list-style: none;
 }
 /* line 50, ../sass/global.sass */
 .grid-33:last-child .app--section {
