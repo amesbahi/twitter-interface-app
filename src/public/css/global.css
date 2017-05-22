@@ -2502,7 +2502,7 @@ input[type="button"] {
 }
 
 /* styling my profile image that is rendered in the header partial */
-img.profileImage {
+img.myProfileImage {
   float: left;
   margin-right: 30px;
 }
