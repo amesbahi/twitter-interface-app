@@ -25,17 +25,10 @@ const parseTwitterDate = (dateString) => {
 
 app.get('/', (req, res) => {
 
-    const profileRequest = T.get('account/verify_credentials', (err, data, response) => {
-    });
-
-    const tweetsRequest = T.get('statuses/user_timeline', { screen_name: 'alborzmesbahi', count: 5 }, (err, data, response) => {
-    });
-
-    const friendsRequest = T.get('friends/list', { screen_name: 'alborzmesbahi', count: 5 }, (err, data, response) => {
-    });
-
-    const messagesRequest = T.get('direct_messages/sent', { screen_name: 'alborzmesbahi', count: 5 }, (err, data, response) => {
-    });
+    const profileRequest = T.get('account/verify_credentials');
+    const tweetsRequest = T.get('statuses/user_timeline', { screen_name: 'alborzmesbahi', count: 5 });
+    const friendsRequest = T.get('friends/list', { screen_name: 'alborzmesbahi', count: 5 });
+    const messagesRequest = T.get('direct_messages/sent', { screen_name: 'alborzmesbahi', count: 5 });
 
     const promiseArray = [profileRequest, tweetsRequest, friendsRequest, messagesRequest];
 
